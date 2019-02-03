@@ -1,0 +1,19 @@
+{
+  "name": "global_phone_directory",
+  "version": "1.0.0",
+  "description": "ReSTful global phone directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maheshbelnekar/Global_Phone_Directory.git"
+  },
+  "author": "mahesh manohar belnekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maheshbelnekar/Global_Phone_Directory/issues"
+  },
+  "homepage": "https://github.com/maheshbelnekar/Global_Phone_Directory#readme"
+}
