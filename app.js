@@ -4,6 +4,9 @@ const app = express();
 const morgan = require('morgan');
 const mysql = require('mysql')
 
+// Serving all files from the public directory
+app.use(express.static('./public'))
+
 // Use morgan to log server requests
 app.use(morgan('short'))
 // Configure your routes/ GET requests here
