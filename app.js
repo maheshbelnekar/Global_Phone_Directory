@@ -40,8 +40,6 @@ app.get("/user/:id",(req,res) => {
       }
 
       res.json(phoneBook)
-
-      // Also pri
     }
     
   })
@@ -71,7 +69,7 @@ app.get("/users",(req,res) => {
       var records = []
 
       for (let i = 0; i < rows.length; i++) {
-        records.push({firstname:rows[i].first_name, LastName: rows[i].last_name})
+        records.push({firstname:rows[i].first_name, LastName: rows[i].last_name, PhoneNumber: rows[i].phone})
       }
 
       res.json(records)
