@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Create.css">
+        <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+        <!-- <script type="text/javascript" src="Login.js"></script> -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Create new contact</title>
+        <style>
+            .w3-bar .w3-button {
+                padding: 16px;
+            }
+        </style>
+    </head>
+    
+    <body>
+
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="Home.html" class="w3-bar-item w3-button w3-wide">Create new contact</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+        
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+            </div>
+        </div>
+      
+        <!-- Sidebar on small screens when clicking the menu icon -->
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        </nav>
+
+        <div class="create-page">
+            <div class="form" >
+                <form class="login-form" id="login-form" method="post" action="/user_create">
+                    <input id="username_login" name="createFirstName"      type="text"     placeholder="First name"/>
+                    <input id="lastname"    name="createLastName"       type="text"     placeholder="Last name"/>
+                    <input id="phone"       name="createPhoneNumber"    type="text"     placeholder="Phone Number">
+                    <button type="submit">
+                        Add to Contacts
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
