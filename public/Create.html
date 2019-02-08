@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Create new contact</title>
+        <title>Global Phone Directory</title>
         <style>
             .w3-bar .w3-button {
                 padding: 16px;
@@ -39,11 +39,11 @@
 
         <div class="create-page">
             <div class="form" >
-                <form class="login-form" id="login-form" method="post" action="/user_create">
+                <form class="login-form" id="login-form" method="post" action="http://localhost:3003/user_create">
                     <input id="username_login" name="createFirstName"      type="text"     placeholder="First name"/>
                     <input id="lastname"    name="createLastName"       type="text"     placeholder="Last name"/>
                     <input id="phone"       name="createPhoneNumber"    type="text"     placeholder="Phone Number">
-                    <button type="submit">
+                    <button type="submit" onclick="window.location.href = 'index.html';">
                         Add to Contacts
                     </button>
                 </form>
