@@ -7,10 +7,19 @@ const bodyParser = require('body-parser')
 
 // Serving all files from the public directory
 app.use(express.static('./public'))
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 // Use morgan to log server requests
 app.use(morgan('short'))
+
+// Allowing access
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+})
 
 // function to establish connection with the database
 function getConnection() {
@@ -76,7 +85,7 @@ app.get("/users",(req,res) => {
       var records = []
 
       for (let i = 0; i < rows.length; i++) {
-        records.push({firstname:rows[i].first_name, LastName: rows[i].last_name, PhoneNumber: rows[i].phone})
+        records.push({firstname:rows[i].first_name, lastname: rows[i].last_name, PhoneNumber: rows[i].phone})
       }
 
       res.json(records)
@@ -106,21 +115,19 @@ app.post('/user_create',(req,res) => {
   // insert into table
   const connection = getConnection()
   const queryString = "insert into users (first_name,last_name,phone) values (?,?,?)"
-  connection.query(queryString,[firstName,lastName,phone],(err,res,fields) => {
+  connection.query(queryString,[firstName,lastName,phone],(err,result,fields) => {
     if (err) {
       console.log("Failed to insert user")
       res.sendStatus(500)
-      return      
     }
     else{
-      console.log("Inserted new user with id: " + res.insertId );
+      console.log("Inserted new user with id: " + result.insertId );
+      res.sendStatus(200)
     }
   })
-
-  res.end()
 })
 
-// Running on localhost:3000
+// Running on localhost:3003
 app.listen(3003, () => {
   console.log("Server is up and listening on 3003");
 })
